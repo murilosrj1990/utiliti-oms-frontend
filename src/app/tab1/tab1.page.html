@@ -1,9 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Notificações
     </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -13,5 +19,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list *ngFor="let item of listOfNotifications">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="{{item.img_src}}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{item.sender}}
+        <ion-text>
+          <p>{{item.message}}</p>
+        </ion-text>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="deleteItem(item.id)">
+          <ion-icon color="danger" name="close-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
 </ion-content>
