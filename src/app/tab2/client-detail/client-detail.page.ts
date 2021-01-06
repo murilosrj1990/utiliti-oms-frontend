@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client-detail.page.scss'],
 })
 export class ClientDetailPage implements OnInit {
+
+  selectedTab='info';
   clientInfo={
     id: 8789,
     name: "Carlos Torres Alcantara",

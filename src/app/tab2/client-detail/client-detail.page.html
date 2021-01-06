@@ -8,62 +8,90 @@
 </ion-header>
 
 <ion-content>
-  <div id="container-options-cards">
-    <ion-button size="small" shape="round" fill="outline">Consultas</ion-button>
-    <ion-button size="small" shape="round" fill="outline">Pagamentos</ion-button>
-    <ion-button size="small" shape="round" fill="outline">Compras</ion-button>
+  <ion-segment [(ngModel)]="selectedTab">
+    <ion-segment-button value="info">
+      <ion-label>Info</ion-label>
+      <ion-icon name="information-circle-outline"></ion-icon>
+    </ion-segment-button>
+
+    <ion-segment-button value="recipe">
+      <ion-label>Consulta</ion-label>
+      <ion-icon name="newspaper-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="payments">
+      <ion-label>Carnê</ion-label>
+      <ion-icon name="cash-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="orders">
+      <ion-label>OS</ion-label>
+      <ion-icon name="receipt-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="selectedTab === 'info' ">
+    <ion-item>
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input readonly>{{clientInfo.name}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Filiação</ion-label>
+      <ion-input readonly>{{clientInfo.affiliation}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Data de Nascimento</ion-label>
+      <ion-input readonly>{{clientInfo.birthdate}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">CPF</ion-label>
+      <ion-input readonly>{{clientInfo.document_id1}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">RG</ion-label>
+      <ion-input readonly>{{clientInfo.document_id2}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Telefone 1</ion-label>
+      <ion-input readonly>{{clientInfo.phone1}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Telefone 2</ion-label>
+      <ion-input readonly>{{clientInfo.phone2}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Telefone 3</ion-label>
+      <ion-input readonly>{{clientInfo.phone3}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input readonly>{{clientInfo.email}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Endereço</ion-label>
+      <ion-input readonly>{{clientInfo.street}}, {{clientInfo.number}} {{clientInfo.number_complement}},
+        {{clientInfo.reference}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Bairro</ion-label>
+      <ion-input readonly>{{clientInfo.neighborhood}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Cidade</ion-label>
+      <ion-input readonly>{{clientInfo.city}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Estado</ion-label>
+      <ion-input readonly>{{clientInfo.state}}</ion-input>
+    </ion-item>
   </div>
-  <ion-item>
-    <ion-label position="stacked">Nome</ion-label>
-    <ion-input readonly>{{clientInfo.name}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Filiação</ion-label>
-    <ion-input readonly>{{clientInfo.affiliation}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Data de Nascimento</ion-label>
-    <ion-input readonly>{{clientInfo.birthdate}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">CPF</ion-label>
-    <ion-input readonly>{{clientInfo.document_id1}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">RG</ion-label>
-    <ion-input readonly>{{clientInfo.document_id2}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Telefone 1</ion-label>
-    <ion-input readonly>{{clientInfo.phone1}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Telefone 2</ion-label>
-    <ion-input readonly>{{clientInfo.phone2}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Telefone 3</ion-label>
-    <ion-input readonly>{{clientInfo.phone3}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Email</ion-label>
-    <ion-input readonly>{{clientInfo.email}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Endereço</ion-label>
-    <ion-input readonly>{{clientInfo.street}}, {{clientInfo.number}} {{clientInfo.number_complement}},
-      {{clientInfo.reference}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Bairro</ion-label>
-    <ion-input readonly>{{clientInfo.neighborhood}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Cidade</ion-label>
-    <ion-input readonly>{{clientInfo.city}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Estado</ion-label>
-    <ion-input readonly>{{clientInfo.state}}</ion-input>
-  </ion-item>
+
+  <div *ngIf="selectedTab === 'payments' ">
+    <p>Payments</p>
+  </div>
+  <div *ngIf="selectedTab === 'recipe' ">
+    <p>Recipe</p>
+  </div>
+  <div *ngIf="selectedTab === 'orders' ">
+    <p>Orders</p>
+  </div>
+
 </ion-content>
