@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -27,10 +28,13 @@ export class Tab2Page {
       "phone": "(83) 99999-9999"
     }
   ];
-  constructor() {}
+  constructor(
+    private router:Router
+  ) {}
 
   openClientDetail(clientId){
     console.log("Open client detail page: "+clientId);
+    this.router.navigateByUrl(`/tabs/tab2/client-detail/${clientId}`);
   }
 
 }
