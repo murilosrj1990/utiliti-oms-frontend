@@ -8,47 +8,56 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-label>Nome
-    <p>{{clientInfo.name}}</p>
-  </ion-label>
-  <ion-label>Filiação
-    <p>{{clientInfo.affiliation}}</p>
-  </ion-label>
-  <ion-label>Data de Nascimento
-    <p>{{clientInfo.birthdate}}</p>
-  </ion-label>
-  <ion-label>CPF
-    <p>{{clientInfo.document_id1}}</p>
-  </ion-label>
-  <ion-label>RG
-    <p>{{clientInfo.document_id2}}</p>
-  </ion-label>
-  <ion-label>Telefone 1
-    <p>{{clientInfo.phone1}}</p>
-  </ion-label>
-  <ion-label>Telefone 2
-    <p>{{clientInfo.phone2}}</p>
-  </ion-label>
-  <ion-label>Telefone 3
-    <p>{{clientInfo.phone3}}</p>
-  </ion-label>
-  <ion-label>Email
-    <p>{{clientInfo.email}}</p>
-  </ion-label>
-  <ion-label>Endereço
-    <p>{{clientInfo.street}}, {{clientInfo.number}} {{clientInfo.number_complement}}, {{clientInfo.reference}}</p>
-  </ion-label>
-  <ion-label>Bairro
-    <p>{{clientInfo.neighborhood}}</p>
-  </ion-label>
-  <ion-label>Cidade
-    <p>{{clientInfo.city}}</p>
-  </ion-label>
-  <ion-label>Estado
-    <p>{{clientInfo.state}}</p>
-  </ion-label>
-
-
-
+  <ion-item>
+    <ion-label position="stacked">Nome</ion-label>
+    <ion-input readonly>{{clientInfo.name}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Filiação</ion-label>
+    <ion-input readonly>{{clientInfo.affiliation}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Data de Nascimento</ion-label>
+    <ion-input readonly>{{clientInfo.birthdate}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">CPF</ion-label>
+    <ion-input readonly>{{clientInfo.document_id1}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">RG</ion-label>
+    <ion-input readonly>{{clientInfo.document_id2}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Telefone 1</ion-label>
+    <ion-input readonly>{{clientInfo.phone1}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Telefone 2</ion-label>
+    <ion-input readonly>{{clientInfo.phone2}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Telefone 3</ion-label>
+    <ion-input readonly>{{clientInfo.phone3}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input readonly>{{clientInfo.email}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Endereço</ion-label>
+    <ion-input readonly>{{clientInfo.street}}, {{clientInfo.number}} {{clientInfo.number_complement}}, {{clientInfo.reference}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Bairro</ion-label>
+    <ion-input readonly>{{clientInfo.neighborhood}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Cidade</ion-label>
+    <ion-input readonly>{{clientInfo.city}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Estado</ion-label>
+    <ion-input readonly>{{clientInfo.state}}</ion-input>
+  </ion-item>
 </ion-content>
