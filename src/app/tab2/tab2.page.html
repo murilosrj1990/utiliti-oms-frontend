@@ -21,17 +21,15 @@
 
     </ion-toolbar>
   </ion-header>
-
   <ion-list *ngFor="let client of listOfClients">
     <ion-item (click)="openClientDetail(client.id)" detail="true">
       <ion-thumbnail slot="start">
         <ion-img src="{{client.img_src}}"></ion-img>
       </ion-thumbnail>
-      <ion-label>{{client.name}}
-        <ion-text>
-          <p>{{client.phone}}</p>
-        </ion-text>
-      </ion-label>
+      <ion-label>
+        {{client.name}}<br>
+        {{client.phone}}
+      </ion-label>      
     </ion-item>
   </ion-list>
 

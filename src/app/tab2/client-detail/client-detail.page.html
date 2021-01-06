@@ -8,6 +8,11 @@
 </ion-header>
 
 <ion-content>
+  <div id="container-options-cards">
+    <ion-button size="small" shape="round" fill="outline">Consultas</ion-button>
+    <ion-button size="small" shape="round" fill="outline">Pagamentos</ion-button>
+    <ion-button size="small" shape="round" fill="outline">Compras</ion-button>
+  </div>
   <ion-item>
     <ion-label position="stacked">Nome</ion-label>
     <ion-input readonly>{{clientInfo.name}}</ion-input>
@@ -46,7 +51,8 @@
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Endereço</ion-label>
-    <ion-input readonly>{{clientInfo.street}}, {{clientInfo.number}} {{clientInfo.number_complement}}, {{clientInfo.reference}}</ion-input>
+    <ion-input readonly>{{clientInfo.street}}, {{clientInfo.number}} {{clientInfo.number_complement}},
+      {{clientInfo.reference}}</ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Bairro</ion-label>

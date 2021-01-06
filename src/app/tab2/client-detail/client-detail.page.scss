@@ -1,0 +1,17 @@
+#container-options-cards {   
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px; 
+}
+
+.card-option {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: inherit;
+    padding: 10px;
+    background-color: rgb(10, 95, 253);
+    color: white;
+    display: inline-block;
+}
