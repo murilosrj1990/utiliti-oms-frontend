@@ -16,6 +16,10 @@ export class AddClientPage implements OnInit {
   ngOnInit() {
   }
 
+  cancelButton(){
+    this.router.navigateByUrl("tabs/tab2");
+  }
+
   saveClient(){
     console.log(this.newClient);
     this.router.navigateByUrl("/tabs/tab2");
