@@ -37,4 +37,9 @@ export class Tab2Page {
     this.router.navigateByUrl(`/tabs/tab2/client-detail/${clientId}`);
   }
 
+  openAddClientPage(){
+    console.log("open add client page");
+    this.router.navigateByUrl("/tabs/tab2/add-client");
+  }
+
 }

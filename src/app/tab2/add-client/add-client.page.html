@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Adicionar Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.name" name="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Data de Nascimento</ion-label>
+    <ion-datetime [(ngModel)]="newClient.birthdate" displayFormat="DD/MMM/YYYY"></ion-datetime>
+    <!-- <ion-input type="text" [(ngModel)]="newClient.birthdate" name="birthdate"></ion-input> -->
+  </ion-item>
+  <ion-item>
+    <ion-label>Filiação</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.affiliation" name="affiliation"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>CPF</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.document_id1" name="document_id1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>RG</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.document_id2" name="document_id2"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Telefone 1</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.phone1" name="phone1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Telefone 2</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.phone2" name="phone2"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Telefone 3</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.phone3" name="phone3"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.email" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Endereço</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.street" name="street"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Número</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.number" name="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Complemento</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.number_complement" name="number_complement"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Referência</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.reference" name="reference"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Bairro</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.neighborhood" name="neighborhood"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Cidade</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.city" name="city"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Estado</ion-label>
+    <ion-input type="text" [(ngModel)]="newClient.state" name="state"></ion-input>
+  </ion-item>
+  <ion-button (click)="saveClient()" expand="full" >SALVAR</ion-button>
+
+</ion-content>

@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'client-detail/:clientId',
     loadChildren: () => import('./client-detail/client-detail.module').then( m => m.ClientDetailPageModule)
+  },
+  {
+    path: 'add-client',
+    loadChildren: () => import('./add-client/add-client.module').then( m => m.AddClientPageModule)
   }
 ];
 
