@@ -23,7 +23,7 @@
   </ion-header>
 
   <ion-list *ngFor="let client of listOfClients">
-    <ion-item>
+    <ion-item (click)="openClientDetail(client.id)" detail="true">
       <ion-thumbnail slot="start">
         <ion-img src="{{client.img_src}}"></ion-img>
       </ion-thumbnail>
@@ -32,11 +32,6 @@
           <p>{{client.phone}}</p>
         </ion-text>
       </ion-label>
-      <ion-buttons slot="end">
-        <ion-button (click)="openClientDetail(client.id)">
-          <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
     </ion-item>
   </ion-list>
 
