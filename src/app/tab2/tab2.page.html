@@ -22,19 +22,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list *ngFor="let item of listOfClients">
+  <ion-list *ngFor="let client of listOfClients">
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-img src="{{item.img_src}}"></ion-img>
+        <ion-img src="{{client.img_src}}"></ion-img>
       </ion-thumbnail>
-      <ion-label>{{item.name}}
+      <ion-label>{{client.name}}
         <ion-text>
-          <p>{{item.phone}}</p>
+          <p>{{client.phone}}</p>
         </ion-text>
       </ion-label>
       <ion-buttons slot="end">
-        <ion-button (click)="deleteItem(item.id)">
-          <ion-icon color="danger" name="close-circle-outline"></ion-icon>
+        <ion-button (click)="openClientDetail(client.id)">
+          <ion-icon name="arrow-forward-circle-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-item>

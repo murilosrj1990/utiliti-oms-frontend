@@ -29,4 +29,8 @@ export class Tab2Page {
   ];
   constructor() {}
 
+  openClientDetail(clientId){
+    console.log("Open client detail page: "+clientId);
+  }
+
 }
