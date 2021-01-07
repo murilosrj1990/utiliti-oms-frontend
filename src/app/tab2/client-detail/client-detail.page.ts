@@ -6,7 +6,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client-detail.page.scss'],
 })
 export class ClientDetailPage implements OnInit {
-
+  osList=[
+    {
+      create_at: "07-10-2020",
+      value: 200.50,
+      products: [
+        {
+          reference_number: 345156,
+          name: "Armação Vizzani Zilo"          
+        },
+        {
+          reference_number: 2676,
+          name: "Lente Acuris com Antireflexo"          
+        }
+      ]
+    }
+  ];
+  recipeList=[
+    {
+      ophthalmologist: "Claudio Carteggiani",
+      created_at: "07-10-2020",
+      re_pd: 0.5,
+      re_axis: 0.6,
+      re_espherical: 0.6,
+      re_cilidrical: 2.1,
+      le_pd: 0.5,
+      le_axis: 0.6,
+      le_espherical: 0.6,
+      le_cilidrical: 2.1,
+      additional: 2.2
+    },
+    {
+      ophthalmologist: "Claudio Carteggiani",
+      created_at: "22-05-2020",
+      re_pd: 0.6,
+      re_axis: 1.3,
+      re_espherical: 0.6,
+      re_cilidrical: 2.1,
+      le_pd: 0.5,
+      le_axis: 0.6,
+      le_espherical: 0.2,
+      le_cilidrical: 0.1,
+      additional: 1.2
+    }
+  ];
+  paymentsList=[];
   selectedTab='info';
   clientInfo={
     id: 8789,

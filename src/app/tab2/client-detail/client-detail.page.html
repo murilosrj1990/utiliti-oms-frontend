@@ -88,7 +88,30 @@
     <p>Payments</p>
   </div>
   <div *ngIf="selectedTab === 'recipe' ">
-    <p>Recipe</p>
+    <ion-list lines="none" *ngFor="let recipe of recipeList">
+      <div class="recipe-container">
+        <ion-item>
+          <ion-label position="stacked">Data de registro</ion-label>
+          {{recipe.created_at}}        
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Oftamologista</ion-label>
+          {{recipe.ophthalmologist}}        
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Olho Direito</ion-label>
+          Esf. {{recipe.re_espherical}}, Cil. {{recipe.re_cilidrical}}, Eixo {{recipe.re_axis}}, DNP {{recipe.re_pd}}        
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Olho Esquerdo</ion-label>
+          Esf. {{recipe.le_espherical}}, Cil. {{recipe.le_cilidrical}}, Eixo {{recipe.le_axis}}, DNP {{recipe.le_pd}}
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Adicional</ion-label>
+          {{recipe.additional}}
+        </ion-item>
+      </div>
+    </ion-list>
   </div>
   <div *ngIf="selectedTab === 'orders' ">
     <p>Orders</p>
