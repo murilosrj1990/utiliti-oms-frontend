@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class Tab2Page {
   isOpenedSearchBar=false;
-  listOfClients: any[] = [
+  listOfClients: any[]=[
     {
       "id": 1234,
       "img_src": "https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y",
@@ -28,18 +28,22 @@ export class Tab2Page {
       "phone": "(83) 99999-9999"
     }
   ];
+  
   constructor(
     private router:Router
   ) {}
 
-  openClientDetail(clientId){
-    console.log("Open client detail page: "+clientId);
-    this.router.navigateByUrl(`/tabs/tab2/client-detail/${clientId}`);
+  openClientDetail(client){
+    console.log("Open client detail page: "+client);
+    this.router.navigateByUrl(`/tabs/tab2/client-detail/${client}`);
   }
 
   openAddClientPage(){
     console.log("open add client page");
     this.router.navigateByUrl("/tabs/tab2/add-client");
+  }
+  ngOnInit(){
+    
   }
 
 }
