@@ -8,6 +8,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-progress-bar *ngIf="isProgress" type="indeterminate"></ion-progress-bar>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
   <ion-segment [(ngModel)]="selectedTab">
     <ion-segment-button value="info">
       <ion-label>Info</ion-label>
@@ -85,29 +90,54 @@
   </div>
 
   <div *ngIf="selectedTab === 'payments' ">
-    <p>Payments</p>
+    <ion-list lines="none" *ngFor="let meat of paymentsList">
+      <div class="payments-container">
+        <ion-item>
+          <ion-label position="stacked"><strong>Data de registro</strong></ion-label>
+          {{meat.created_at | date: 'dd/MM/yy'}}
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked"><strong>Valor Total</strong></ion-label>
+          {{meat.value | currency: 'BRL'}}
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked"><strong>Parcelas</strong></ion-label>
+        </ion-item>
+        <div *ngFor="let payment of meat.payments">
+          <ion-item (click)="openPaymentDialog(payment)" detail="true">
+            <ion-icon color="success" *ngIf="payment.status === 'paid'" name="checkmark-circle"></ion-icon>
+            <ion-icon color="warning" *ngIf="payment.status === 'pending'" name="time"></ion-icon>
+            <ion-icon color="danger" *ngIf="payment.status === 'overdue'" name="close-circle"></ion-icon>
+            <p style="padding-left: 10px;" class="ion-text">              
+              <strong>Vencimento:</strong> {{payment.due_date | date: 'dd/MM/yy'}}<br>
+              <strong>Valor:</strong> {{payment.value | currency: 'BRL'}}    
+            </p>                   
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
   </div>
   <div *ngIf="selectedTab === 'recipe' ">
     <ion-list lines="none" *ngFor="let recipe of recipeList">
       <div class="recipe-container">
         <ion-item>
-          <ion-label position="stacked">Data de registro</ion-label>
-          {{recipe.created_at | date: 'dd/MM/yy'}}        
+          <ion-label position="stacked"><strong>Data de registro</strong></ion-label>
+          {{recipe.created_at | date: 'dd/MM/yy'}}
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Oftamologista</ion-label>
-          {{recipe.ophthalmologist}}        
+          <ion-label position="stacked"><strong>Oftamologista</strong></ion-label>
+          {{recipe.ophthalmologist}}
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Olho Direito</ion-label>
-          Esf. {{recipe.re_espherical}}, Cil. {{recipe.re_cilidrical}}, Eixo {{recipe.re_axis}}, DNP {{recipe.re_pd}}        
+          <ion-label position="stacked"><strong>Olho Direito</strong></ion-label>
+          Esf. {{recipe.re_espherical}}, Cil. {{recipe.re_cilidrical}}, Eixo {{recipe.re_axis}}, DNP {{recipe.re_pd}}
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Olho Esquerdo</ion-label>
+          <ion-label position="stacked"><strong>Olho Esquerdo</strong></ion-label>
           Esf. {{recipe.le_espherical}}, Cil. {{recipe.le_cilidrical}}, Eixo {{recipe.le_axis}}, DNP {{recipe.le_pd}}
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Adicional</ion-label>
+          <ion-label position="stacked"><strong>Adicional</strong></ion-label>
           {{recipe.additional}}
         </ion-item>
       </div>
