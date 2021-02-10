@@ -92,7 +92,7 @@
       <div class="recipe-container">
         <ion-item>
           <ion-label position="stacked">Data de registro</ion-label>
-          {{recipe.created_at}}        
+          {{recipe.created_at | date: 'dd/MM/yy'}}        
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Oftamologista</ion-label>

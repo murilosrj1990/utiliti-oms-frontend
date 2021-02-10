@@ -38,7 +38,7 @@ export class ClientDetailPage implements OnInit {
     },
     {
       ophthalmologist: "Claudio Carteggiani",
-      created_at: "22-05-2020",
+      created_at: "05-22-2020",
       re_pd: 0.6,
       re_axis: 1.3,
       re_espherical: 0.6,
@@ -50,7 +50,35 @@ export class ClientDetailPage implements OnInit {
       additional: 1.2
     }
   ];
-  paymentsList=[];
+  paymentsList=[
+    {
+      id: 1234,
+      service_order: 208345,
+      payments: [
+        {
+          id: 2267,
+          value: 100.0,
+          status: 'paid',
+          due_date: ''
+        },
+        {
+          id: 2268,
+          value: 100.0,
+          status: 'pending'
+        },
+        {
+          id: 2269,
+          value: 100.0,
+          status: 'pending'
+        },
+        {
+          id: 2270,
+          value: 50.0,
+          status: 'pending'
+        }
+      ]
+    }
+  ];
   selectedTab='info';
   clientInfo={
     id: 8789,
